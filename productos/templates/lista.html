@@ -3,9 +3,10 @@
 {% block title %}Productos - Mi E-commerce{% endblock %}
 
 {% block content %}
-    <h1>Productos</h1>
-
-    <a href="{% url 'productos:crea_producto' %}">Agregar nuevo producto</a>
+    <div class="productos-encabezado">
+        <h1>Catálogo de productos</h1>
+        <a class="boton-agregar" href="{% url 'productos:crea_producto' %}">Agregar nuevo producto + </a>
+    </div>
     <hr>
 
     <div id="productos"></div>
@@ -37,9 +38,9 @@
                     <h2>${producto.id}. ${producto.nombre}</h2>
                     <p>Precio: $${precio}</p>
                     <p>${producto.descripcion}</p>
-
-                    <img src="${producto.imagen_url}" width="150" height="150">
-
+                    <a href="${producto.imagen_url}" target="_blank">
+                    <img src="${producto.imagen_url}" width="150" height="150" title="${producto.nombre}">
+                    </a>
                     <hr>
                 `;
 

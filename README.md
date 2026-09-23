@@ -43,7 +43,7 @@ En este proyecto son necesarias variables de entorno alojadas en el archivo .env
 Cabe resaltar que los datos ingresados en este archivo de varianles de entorno deben coincidir para que la conexión con postgreSQL sea exitosa.
 
 ## Migraciones
-Hasta este punto solo nos queda realizar la migración de nuestros modelos al motor de base de datos de postgreSQL(ya se debe tener la base de datos creada), los ejecutamos con los suguientes comandos:
+Hasta este punto solo nos queda realizar la migración de nuestros modelos al motor de base de datos de postgreSQL(ya se debe tener la base de datos creada), los ejecutamos con los siguientes comandos:
 
 `python manage.py makemigrations`
 

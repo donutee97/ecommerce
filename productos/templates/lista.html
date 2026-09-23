@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+</head>
+<body>
+    <h1>Productos</h1>
+
+    <a href="crear/">Agregar nuevo producto</a>
+    <hr>
+
+    <div id="productos"></div>
+
+    <script>
+
+        cargarProductos();
+
+        async function cargarProductos() {
+            try {
+                const response = await fetch('/productos/api/productos/');
+
+                if (!response.ok) {
+                    throw new Error(`Error al cargar los productos (${response.status})`);
+                }
+
+                const productos = await response.json();
+                const contenedor = document.getElementById('productos');
+
+                productos.forEach(producto => {
+                    const div = document.createElement('div');
+
+                    div.innerHTML = `
+                    <h2>${producto.nombre}</h2>
+                    <p>Precio: $${producto.precio}</p>
+                    <p>${producto.descripcion}</p>
+
+                    <img src="${producto.imagen_url}" width="150">
+
+                    <hr>
+                `;
+
+                    contenedor.appendChild(div);
+                }); 
+            } catch (error) {
+                document.getElementById('productos').textContent = error.message;
+            }
+        }
+    </script>
+</body>
+</html>

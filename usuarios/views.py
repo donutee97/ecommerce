@@ -1,9 +1,14 @@
 import json
 from django.http import JsonResponse
+from django.shortcuts import render
 from django.views.decorators.http import require_POST
 from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.models import User
 
 # Create your views here.
+def lista_usuarios(request):
+    usuarios = User.objects.all().order_by('username')
+    return render(request, 'lista_users.html', {'usuarios': usuarios})
 
 @csrf_exempt
 @require_POST

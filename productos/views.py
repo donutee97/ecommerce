@@ -10,7 +10,7 @@ def crea_producto(request):
     return render(request, 'crear.html')
 
 def listar_productos(request):
-    productos = Producto.objects.all()
+    productos = Producto.objects.all().order_by('id')
     data = []
     for p in productos:
         data.append({

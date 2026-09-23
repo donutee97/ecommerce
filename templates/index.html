@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-commerce</title>
-</head>
-<body>
-    <h1>Mi e-commerce</h1>
+{% extends 'base.html' %}
 
-    <p>MENÚ PRINCIPAL</p>
-    <a href="/productos/">Productos</a>
-</body>
-</html>
+{% block title %}Inicio - Mi E-commerce{% endblock %}
+
+{% block content %}
+    <h1>Bienvenido a nuestra tienda online</h1>
+    <p>Mi e-commerce</p>
+{% endblock %}

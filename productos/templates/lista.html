@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productos</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title %}Productos - Mi E-commerce{% endblock %}
+
+{% block content %}
     <h1>Productos</h1>
 
-    <a href="crear/">Agregar nuevo producto</a>
+    <a href="{% url 'productos:crea_producto' %}">Agregar nuevo producto</a>
     <hr>
 
     <div id="productos"></div>
@@ -27,16 +24,21 @@
 
                 const productos = await response.json();
                 const contenedor = document.getElementById('productos');
+                const formatoPrecio = new Intl.NumberFormat('es-CO', {
+                    maximumFractionDigits: 0
+                });
 
                 productos.forEach(producto => {
                     const div = document.createElement('div');
+                    const precio = formatoPrecio.format(Number(producto.precio));
 
                     div.innerHTML = `
-                    <h2>${producto.nombre}</h2>
-                    <p>Precio: $${producto.precio}</p>
+
+                    <h2>${producto.id}. ${producto.nombre}</h2>
+                    <p>Precio: $${precio}</p>
                     <p>${producto.descripcion}</p>
 
-                    <img src="${producto.imagen_url}" width="150">
+                    <img src="${producto.imagen_url}" width="150" height="150">
 
                     <hr>
                 `;
@@ -48,5 +50,4 @@
             }
         }
     </script>
-</body>
-</html>
+{% endblock %}

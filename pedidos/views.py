@@ -1,6 +1,5 @@
 from django.shortcuts import render
 
 # Create your views here.
-from django.http import HttpResponse
 def inicio(request):
-    return HttpResponse('Servidor Django funcionando correctamente')
+    return render(request, 'pedidos/inicio.html')

@@ -11,13 +11,58 @@ body {
     line-height: 1.6;
 }
 
+main {
+    padding: 50px;
+}
+
+/* Estilos básicos para el header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 2rem;
+}
+
+/* Estilo para el logo */
+.header > a,
+.header > a:visited,
+.header > a:hover,
+.header > a:focus,
+.header > a:active {
+    color: #fff;
+    text-decoration: none;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Estilos para los enlaces del menú */
+.nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 1.5rem;
+}
+
+/* Cambio de color al pasar el mouse */
+.nav a:hover {
+    color: #00bcd4;
+}
+
+/*
 .container {
     width: 90%;
     max-width: 1100px;
     margin: 0 auto;
 }
+*/
 
 /* Cabecera y Navegación */
+/*
 .header {
     background: #fff;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -55,8 +100,10 @@ body {
 .nav-list a:hover {
     color: #0077b6;
 }
+*/
 
 /* Sección Hero */
+/*
 .hero {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://unsplash.com') no-repeat center center/cover;
     height: 80vh;
@@ -89,8 +136,10 @@ body {
 .btn:hover {
     background: #023e8a;
 }
+*/
 
 /* Sección de Destinos */
+/*
 .destinos {
     padding: 60px 0;
 }
@@ -129,11 +178,14 @@ body {
     margin-bottom: 10px;
     color: #333;
 }
+*/
 
 /* Pie de página */
+/*
 .footer {
     background: #222;
     color: #fff;
     text-align: center;
     padding: 20px 0;
 }
+*/
